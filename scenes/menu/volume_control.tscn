@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm2xyexrsgcxx"]
+
+[ext_resource type="Script" path="res://scenes/menu/volume_control.gd" id="1_xdkgm"]
+
+[node name="VolumeControl" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.035
+offset_bottom = 0.32
+grow_horizontal = 2
+script = ExtResource("1_xdkgm")
+bus_name = "Master"
+
+[node name="ControlName" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="ControlName"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "Master"
+
+[node name="ControlSlider" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Slider" type="HSlider" parent="ControlSlider"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="ControlValue" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="ControlValue"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "100"
+horizontal_alignment = 2
